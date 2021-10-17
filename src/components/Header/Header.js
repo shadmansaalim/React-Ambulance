@@ -5,16 +5,17 @@ import { faSignInAlt, faUserPlus, faUserCircle } from '@fortawesome/free-solid-s
 
 const Header = () => {
     return (
-        <Navbar variant="white" bg="dark" expand="lg">
+        <Navbar variant="white" style={{ backgroundColor: '	#42ba96' }} expand="lg">
             <Container>
-                <Navbar.Brand href="#home">
-                    <img
+                <Navbar.Brand className="text-white" href="/home">
+                    EASA
+                    {/* <img
                         src="https://medulance.com/images/logo.png"
                         width="200"
                         height="50"
                         className="d-inline-block align-top"
                         alt="Ambulance Victoria"
-                    />
+                    /> */}
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -28,8 +29,8 @@ const Header = () => {
                             <NavDropdown.Divider />
                             <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                         </NavDropdown> */}
-                        <Button className="mx-lg-2" variant="outline-danger">Login <FontAwesomeIcon icon={faSignInAlt} /></Button>
-                        <Button variant="danger">Sign Up <FontAwesomeIcon icon={faUserPlus} /></Button>
+                        <Button className="mx-lg-2" variant="outline-dark">Login <FontAwesomeIcon icon={faSignInAlt} /></Button>
+                        <Button variant="dark">Sign Up <FontAwesomeIcon icon={faUserPlus} /></Button>
 
                     </Nav>
                 </Navbar.Collapse>
