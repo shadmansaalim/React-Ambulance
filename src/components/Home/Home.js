@@ -4,10 +4,12 @@ import Services from '../Services/Services';
 
 const Home = () => {
     return (
-        <div>
+        <main>
             <Banner></Banner>
-            <Services></Services>
-        </div>
+            <section className="container">
+                <Services></Services>
+            </section>
+        </main>
     );
 };
 
