@@ -38,7 +38,8 @@
 }
 
 
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500&display=swap');
+
 body{
-  background-color: rgb(33, 37, 41) !important;
-  color: white;
+    font-family: 'Epilogue', sans-serif !important;
 }

@@ -7,7 +7,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 const Banner = () => {
     return (
         <div className="position-relative">
-            <div>
+            <div style={{ backgroundColor: 'black' }}>
                 <video autoPlay muted loop>
                     <source src={bgVideo} type="video/mp4"></source>
                 </video>

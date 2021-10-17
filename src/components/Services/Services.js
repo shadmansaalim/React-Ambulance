@@ -14,14 +14,14 @@ const Services = () => {
     }, [])
     return (
         <section className="my-5">
-            <Row xs={1} md={3} className="g-4">
-                {
-                    services.map(service => <Service
-                        key={service.id}
-                        service={service}
-                    ></Service>)
-                }
-            </Row>
+
+            {
+                services.map(service => <Service
+                    key={service.id}
+                    service={service}
+                ></Service>)
+            }
+
         </section>
     );
 };
