@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Patient Transport Vehicle",
+        "description": "The Patient Transport Vehicle is a small or large van used to transport patients who are in stable condition and do not need anything more than oxygen. These are smaller vehicles like Omni or Eeco which can carry up to 2 people along with patient.",
+        "id": 1,
+        "equipments": [
+            "Hydraulic stretcher (large)",
+            "Slide stretcher (small)",
+            "Oxygen cylinders",
+            "First Aid Kit",
+            "Extra seats for passengers"
+        ],
+        "image": "https://www.stanplus.com/images/bgimg.png"
+    },
+    {
+        "name": "Basic Life Support",
+        "description": "The Basic Life Support is a large van with key basic medical facilities. Not equipped to sustain un-stable patients for a prolonged duration. These are larger vehicles like Tempo or Force which can carry up to 4 people along with patient",
+        "id": 2,
+        "equipments": [
+            "Immobilization sets",
+            "Monitoring and diagnostic",
+            "Oxygen supply & Basic Respiratory Support",
+            "Consumables & Disposables",
+            "Safety Tools"
+        ],
+        "image": "https://www.stanplus.com/images/BLS.png"
+    },
+    {
+        "name": "Advanced Life Support",
+        "description": "The Advanced Life Support is a large van with equipment for unstable patients which is used in emergency situations and long-distance transfers. These are larger vehicles like Tempo or Force which can carry up to 4 people along with patient.",
+        "id": 3,
+        "equipments": [
+            "All BLS Equipment",
+            "Infusion & Drug Administration equipment",
+            "Respiratory Support",
+            "First Aid Kit",
+            "Extra seats for passengers"
+        ],
+        "image": "https://www.stanplus.com/images/als.jpg"
+    },
+    {
+        "name": "Medical Utility Vehicle",
+        "description": "The Medical Utility Vehicle is a state-of-the-art small or large van that is designed to facilitate the movement & transfer of patients.",
+        "id": 4,
+        "equipments": [
+            "Wheelchair Access",
+            "Helpers for Mobility",
+            "Seat Swivel",
+            "First Aid Kit"
+        ],
+        "image": "https://www.stanplus.com/images/banner_img2.png"
+    },
+    {
+        "name": "Air Ambulance",
+        "description": "Air ambulances help in transfer of patient across long distances in both emergency and non-emergency situations. We also provide Air Cargos which help in transfer of dead bodies across long distances.",
+        "id": 5,
+        "equipments": [
+            "Assisted by Doctor & Paramedic",
+            "Access to more Airports",
+            "Local and Global Transit",
+            "Time efficient"
+        ],
+        "image": "https://www.stanplus.com/images/airambulance.png"
+    }
+]
