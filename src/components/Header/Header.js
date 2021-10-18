@@ -1,12 +1,21 @@
 import React from 'react';
-import { Navbar, Container, Nav, NavDropdown, Button } from 'react-bootstrap';
+import { Navbar, Container, Nav, Offcanvas, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSignInAlt, faUserPlus, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import { HashLink } from 'react-router-hash-link';
 import { useHistory } from 'react-router-dom';
-
+import useAuth from '../../hooks/useAuth';
+import './Header.css'
+import { useState } from 'react';
 const Header = () => {
     const history = useHistory();
+
+    const { user, logOutUser } = useAuth();
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
     return (
         <Navbar variant="white" style={{ backgroundColor: '	#42ba96' }} expand="lg">
             <Container>
@@ -24,17 +33,42 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
                         <Nav.Link className="text-white" href="/home">Home</Nav.Link>
-                        <HashLink className="nav-link text-white" to="/#services">Services</HashLink>
-                        {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                        </NavDropdown> */}
-                        <Button className="mx-lg-2" variant="outline-dark">Login <FontAwesomeIcon icon={faSignInAlt} /></Button>
-                        <Button onClick={() => history.push('/sign-up')} variant="dark">Sign Up <FontAwesomeIcon icon={faUserPlus} /></Button>
+                        <HashLink className="nav-link text-white me-lg-2" to="/#services">Services</HashLink>
+                        {
+                            user ?
+                                user?.photoURL ?
+                                    <img className="img-fluid rounded-circle" src={user.photoURL} alt={user.displayName} style={{ width: 40, height: 40 }} data-bs-toggle="tooltip" data-bs-placement="bottom" title={user.displayName} onClick={handleShow} ></img>
+                                    :
+                                    <FontAwesomeIcon className="fs-1 text-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" title={user?.displayName} icon={faUserCircle} onClick={handleShow} />
 
+                                :
+                                <div className="d-flex flex-column flex-lg-row mt-2 mt-lg-0">
+                                    <Button className="me-lg-2" onClick={() => history.push('/login')} variant="outline-dark">Login <FontAwesomeIcon icon={faSignInAlt} /></Button>
+                                    <Button className="mt-1 mt-lg-0" onClick={() => history.push('/sign-up')} variant="dark">Sign Up <FontAwesomeIcon icon={faUserPlus} /></Button>
+                                </div>
+                        }
+
+                        <Offcanvas show={show} onHide={handleClose} placement="end">
+                            <Offcanvas.Header closeButton>
+                                <Offcanvas.Title></Offcanvas.Title>
+                            </Offcanvas.Header>
+                            <Offcanvas.Body>
+                                <div className="text-center">
+                                    {
+                                        user?.photoURL ?
+                                            <img className="img-fluid rounded-circle settings-user-img" src={user.photoURL} alt={user?.displayName}></img>
+                                            :
+                                            <FontAwesomeIcon className="fs-1 text-secondary settings-user-img" icon={faUserCircle} />
+                                    }
+                                    <p className="mt-2">{user?.displayName}</p>
+                                    <button onClick={() => {
+                                        logOutUser();
+                                        handleClose();
+                                    }} className="btn btn-warning">Log Out</button>
+                                </div>
+
+                            </Offcanvas.Body>
+                        </Offcanvas>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
@@ -43,3 +77,4 @@ const Header = () => {
 };
 
 export default Header;
+
