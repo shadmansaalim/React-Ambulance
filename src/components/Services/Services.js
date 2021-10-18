@@ -14,7 +14,7 @@ const Services = () => {
     }, [])
     return (
         <section className="my-5">
-
+            <h1 className="fw-bold">Emergency Services</h1>
             {
                 services.map(service => <Service
                     key={service.id}
