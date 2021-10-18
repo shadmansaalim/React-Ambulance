@@ -1,9 +1,15 @@
 import React from 'react';
 import { Col, Card } from 'react-bootstrap';
+import { useHistory } from 'react-router-dom';
 import './Service.css'
 
 const Service = (props) => {
     const { id, name, image, description } = props.service;
+    const history = useHistory();
+
+    const goToServiceDetails = () => {
+        history.push(`/service/${id}`);
+    }
     return (
         <section className="my-5 ">
             {
@@ -14,7 +20,7 @@ const Service = (props) => {
                             <div>
                                 <h2>{name}</h2>
                                 <p>{description}</p>
-                                <button className="btn btn-outline-dark rounded-pill">Book Now</button>
+                                <button onClick={goToServiceDetails} className="btn btn-outline-dark rounded-pill">Book Now</button>
                             </div>
                         </div>
                         <div className="col-lg-6 mx-auto order-1 order-lg-2">
@@ -30,7 +36,7 @@ const Service = (props) => {
                             <div>
                                 <h2>{name}</h2>
                                 <p>{description}</p>
-                                <button className="btn btn-outline-dark rounded-pill">Book Now</button>
+                                <button onClick={goToServiceDetails} className="btn btn-outline-dark rounded-pill">Book Now</button>
                             </div>
                         </div>
                     </section>

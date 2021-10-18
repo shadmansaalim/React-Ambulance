@@ -1,19 +1,21 @@
 import React from 'react';
 import useAuth from '../../hooks/useAuth'
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import googleIcon from '../../images/googleIcon.png'
 
 const Login = () => {
     const { setError, handleLoginEmailChange, handleLoginPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp, handleLogin } = useAuth();
 
     const history = useHistory();
+    const location = useLocation();
+    const redirectURL = location.state?.from || '/home';
 
 
     const signUpUsingGoogle = () => {
         handleGoogleSignUp()
             .then(result => {
                 console.log(result.user)
-                history.push('/home')
+                history.push(redirectURL)
             })
             .catch(error => {
                 setError(error.message)
@@ -23,7 +25,7 @@ const Login = () => {
         handleFacebookSignUp()
             .then(result => {
                 console.log(result.user)
-                history.push('/home')
+                history.push(redirectURL)
             })
             .catch(error => {
                 setError(error.message)
@@ -33,7 +35,7 @@ const Login = () => {
         handleTwitterSignUp()
             .then(result => {
                 console.log(result.user)
-                history.push('/home')
+                history.push(redirectURL)
             })
             .catch(error => {
                 setError(error.message)
@@ -45,7 +47,7 @@ const Login = () => {
         e.preventDefault();
         handleLogin()
             .then(result => {
-                history.push('/home');
+                history.push(redirectURL);
             })
             .catch(error => {
                 setError(error.message);

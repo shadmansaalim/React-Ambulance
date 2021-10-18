@@ -11,6 +11,9 @@ import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import AuthProvider from './context/AuthProvider';
 import Login from './components/Login/Login';
+import PrivateServices from './components/PrivateRoute/PrivateServices';
+import ServiceDetails from './components/ServiceDetails/ServiceDetails';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
 
@@ -18,22 +21,27 @@ function App() {
     <div className="App">
       <AuthProvider>
         <Router>
-          <Header></Header>
-          <Switch>
-            <Route exact path="/">
-              <Home></Home>
-            </Route>
-            <Route exact path="/home">
-              <Home></Home>
-            </Route>
-            <Route exact path="/sign-up">
-              <SignUp></SignUp>
-            </Route>
-            <Route exact path="/login">
-              <Login></Login>
-            </Route>
-          </Switch>
-          <Footer></Footer>
+          <ScrollToTop>
+            <Header></Header>
+            <Switch>
+              <Route exact path="/">
+                <Home></Home>
+              </Route>
+              <Route exact path="/home">
+                <Home></Home>
+              </Route>
+              <PrivateServices exact path="/service/:serviceId">
+                <ServiceDetails></ServiceDetails>
+              </PrivateServices>
+              <Route exact path="/sign-up">
+                <SignUp></SignUp>
+              </Route>
+              <Route exact path="/login">
+                <Login></Login>
+              </Route>
+            </Switch>
+            <Footer></Footer>
+          </ScrollToTop>
         </Router>
       </AuthProvider>
     </div>
