@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import googleIcon from '../../images/googleIcon.png'
 
 const SignUp = () => {
-    const { user, setUser, setError, createAccountUsingEmail, setUserDetails, handleNameChange, handleSignUpEmailChange, handleSignUpPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp } = useAuth();
+    const { user, setUser, setError, createAccountUsingEmail, setUserDetails, handleNameChange, handleSignUpEmailChange, handleSignUpPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp, setIsLoading } = useAuth();
 
     const history = useHistory();
 
@@ -25,6 +25,7 @@ const SignUp = () => {
 
 
     const signUpUsingGoogle = () => {
+        setIsLoading(true);
         handleGoogleSignUp()
             .then(result => {
                 console.log(result.user)
@@ -33,8 +34,10 @@ const SignUp = () => {
             .catch(error => {
                 setError(error.message)
             })
+            .finally(() => setIsLoading(false));
     }
     const signUpUsingFacebook = () => {
+        setIsLoading(true);
         handleFacebookSignUp()
             .then(result => {
                 console.log(result.user)
@@ -43,8 +46,10 @@ const SignUp = () => {
             .catch(error => {
                 setError(error.message)
             })
+            .finally(() => setIsLoading(false));
     }
     const signUpUsingTwitter = () => {
+        setIsLoading(true);
         handleTwitterSignUp()
             .then(result => {
                 console.log(result.user)
@@ -53,6 +58,7 @@ const SignUp = () => {
             .catch(error => {
                 setError(error.message)
             })
+            .finally(() => setIsLoading(false));
     }
 
     return (

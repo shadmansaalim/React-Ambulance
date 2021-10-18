@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import googleIcon from '../../images/googleIcon.png'
 
 const Login = () => {
-    const { setError, handleLoginEmailChange, handleLoginPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp, handleLogin } = useAuth();
+    const { setError, handleLoginEmailChange, handleLoginPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp, handleLogin, setIsLoading } = useAuth();
 
     const history = useHistory();
     const location = useLocation();
@@ -12,6 +12,7 @@ const Login = () => {
 
 
     const signUpUsingGoogle = () => {
+        setIsLoading(true);
         handleGoogleSignUp()
             .then(result => {
                 console.log(result.user)
@@ -20,8 +21,10 @@ const Login = () => {
             .catch(error => {
                 setError(error.message)
             })
+            .finally(() => setIsLoading(false));
     }
     const signUpUsingFacebook = () => {
+        setIsLoading(true);
         handleFacebookSignUp()
             .then(result => {
                 console.log(result.user)
@@ -30,8 +33,10 @@ const Login = () => {
             .catch(error => {
                 setError(error.message)
             })
+            .finally(() => setIsLoading(false));
     }
     const signUpUsingTwitter = () => {
+        setIsLoading(true);
         handleTwitterSignUp()
             .then(result => {
                 console.log(result.user)
@@ -40,6 +45,7 @@ const Login = () => {
             .catch(error => {
                 setError(error.message)
             })
+            .finally(() => setIsLoading(false));
     }
 
 
@@ -52,6 +58,7 @@ const Login = () => {
             .catch(error => {
                 setError(error.message);
             })
+
     }
 
     return (
@@ -68,8 +75,8 @@ const Login = () => {
                         <p>
                             <button onClick={signUpUsingGoogle} class="btn btn-light w-100 btn-block  btn-outline" ><img width="16px" className="img-fluid mb-1 me-2" src={googleIcon} alt="Google" />Login With Google</button>
                             {/* <button onClick={signUpUsingGoogle} className="btn btn-block btn-light  w-100"> <i className="fab fa-google"></i>   Continue With Google</button> */}
-                            <button onClick={signUpUsingFacebook} className="mt-2 btn btn-block btn-twitter w-100 text-white"> <i className="fab fa-twitter"></i>   Login With Twitter</button>
-                            <button onClick={signUpUsingTwitter} className="btn btn-block btn-facebook w-100 mt-2 text-white"> <i className="fab fa-facebook-f"></i>   Login With Facebook</button>
+                            <button onClick={signUpUsingTwitter} className="mt-2 btn btn-block btn-twitter w-100 text-white"> <i className="fab fa-twitter"></i>   Login With Twitter</button>
+                            <button onClick={signUpUsingFacebook} className="btn btn-block btn-facebook w-100 mt-2 text-white"> <i className="fab fa-facebook-f"></i>   Login With Facebook</button>
                         </p>
                         <p className="divider-text">
                             <span className="bg-light rounded-circle p-2">OR</span>

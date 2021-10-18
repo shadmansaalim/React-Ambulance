@@ -8,6 +8,7 @@ initializeAuthentication();
 
 const useFirebase = () => {
     const [user, setUser] = useState(null);
+    const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState('');
     const [name, setName] = useState('');
     const [signUpEmail, setSignUpEmail] = useState('');
@@ -46,6 +47,7 @@ const useFirebase = () => {
             else {
                 setUser(null);
             }
+            setIsLoading(false);
         })
     }, []);
 
@@ -57,6 +59,7 @@ const useFirebase = () => {
             .catch(error => {
                 setError(error.message);
             })
+            .finally(() => setIsLoading(false));
     }
 
 
@@ -65,6 +68,7 @@ const useFirebase = () => {
             .then(() => {
                 setUser(null);
             })
+            .finally(() => setIsLoading(false));
     }
 
 
@@ -109,7 +113,9 @@ const useFirebase = () => {
         handleTwitterSignUp,
         handleLogin,
         handleLoginEmailChange,
-        handleLoginPasswordChange
+        handleLoginPasswordChange,
+        isLoading,
+        setIsLoading
     }
 }
 
