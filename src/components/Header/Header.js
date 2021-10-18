@@ -40,7 +40,7 @@ const Header = () => {
                                 user?.photoURL ?
                                     <img className="img-fluid rounded-circle" src={user.photoURL} alt={user.displayName} style={{ width: 40, height: 40 }} data-bs-toggle="tooltip" data-bs-placement="bottom" title={user.displayName} onClick={handleShow} ></img>
                                     :
-                                    <FontAwesomeIcon className="fs-1 text-dark" data-bs-toggle="tooltip" data-bs-placement="bottom" title={user?.displayName} icon={faUserCircle} onClick={handleShow} />
+                                    <FontAwesomeIcon className="fs-1 text-white" data-bs-toggle="tooltip" data-bs-placement="bottom" title={user?.displayName} icon={faUserCircle} onClick={handleShow} />
 
                                 :
                                 <div className="d-flex flex-column flex-lg-row mt-2 mt-lg-0">

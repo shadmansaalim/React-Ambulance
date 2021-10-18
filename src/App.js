@@ -10,6 +10,7 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import SignUp from './components/SignUp/SignUp';
 import AuthProvider from './context/AuthProvider';
+import Login from './components/Login/Login';
 
 function App() {
 
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route exact path="/sign-up">
               <SignUp></SignUp>
+            </Route>
+            <Route exact path="/login">
+              <Login></Login>
             </Route>
           </Switch>
           <Footer></Footer>
