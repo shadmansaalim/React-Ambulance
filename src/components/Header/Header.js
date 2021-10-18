@@ -32,7 +32,7 @@ const Header = () => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto">
+                    <Nav className="ms-auto d-flex align-items-center">
                         <Nav.Link className="text-white" href="/home">Home</Nav.Link>
                         <HashLink className="nav-link text-white me-lg-2" to="/#services">Services</HashLink>
                         {
