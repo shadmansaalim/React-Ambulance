@@ -3,6 +3,7 @@ import imgSignUp from '../../images/signup.svg'
 import './SignUp.css'
 import useAuth from '../../hooks/useAuth'
 import { useHistory } from 'react-router-dom';
+import googleIcon from '../../images/googleIcon.png'
 
 const SignUp = () => {
     const { user, setUser, setError, createAccountUsingEmail, setUserDetails, handleNameChange, handleSignUpEmailChange, handleSignUpPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp } = useAuth();
@@ -62,7 +63,8 @@ const SignUp = () => {
                         <h4 className="card-title mt-3 text-center">Create Account</h4>
                         <p className="text-center">Get Free Emergency Ambulance Service</p>
                         <p>
-                            <button onClick={signUpUsingGoogle} className="btn btn-block btn-light  w-100"> <i className="fab fa-google"></i>   Continue With Google</button>
+                            <button onClick={signUpUsingGoogle} class="btn btn-light w-100 btn-block  btn-outline" ><img width="16px" className="img-fluid mb-1 me-2" src={googleIcon} alt="Google" />Continue With Google</button>
+                            {/* <button onClick={signUpUsingGoogle} className="btn btn-block btn-light  w-100"> <i className="fab fa-google"></i>   Continue With Google</button> */}
                             <button onClick={signUpUsingFacebook} className="mt-2 btn btn-block btn-twitter w-100 text-white"> <i className="fab fa-twitter"></i>   Continue With Twitter</button>
                             <button onClick={signUpUsingTwitter} className="btn btn-block btn-facebook w-100 mt-2 text-white"> <i className="fab fa-facebook-f"></i>   Continue With Facebook</button>
                         </p>

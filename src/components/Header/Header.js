@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Header.css'
 import { useState } from 'react';
+
 const Header = () => {
     const history = useHistory();
 
@@ -17,7 +18,7 @@ const Header = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
-        <Navbar variant="white" style={{ backgroundColor: '	#42ba96' }} expand="lg">
+        <Navbar variant="white" className="bg-dark" expand="lg">
             <Container>
                 <Navbar.Brand className="text-white" href="/home">
                     EASA
@@ -43,8 +44,8 @@ const Header = () => {
 
                                 :
                                 <div className="d-flex flex-column flex-lg-row mt-2 mt-lg-0">
-                                    <Button className="me-lg-2" onClick={() => history.push('/login')} variant="outline-dark">Login <FontAwesomeIcon icon={faSignInAlt} /></Button>
-                                    <Button className="mt-1 mt-lg-0" onClick={() => history.push('/sign-up')} variant="dark">Sign Up <FontAwesomeIcon icon={faUserPlus} /></Button>
+                                    <Button className="me-lg-2" onClick={() => history.push('/login')} variant="outline-light">Login <FontAwesomeIcon icon={faSignInAlt} /></Button>
+                                    <Button className="mt-1 mt-lg-0" onClick={() => history.push('/sign-up')} variant="light">Sign Up <FontAwesomeIcon icon={faUserPlus} /></Button>
                                 </div>
                         }
 

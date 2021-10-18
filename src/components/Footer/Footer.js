@@ -47,15 +47,13 @@ const Footer = () => {
 
                         <div className="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
 
-                            <h6 className="text-uppercase fw-bold">Company name</h6>
+                            <h6 className="text-uppercase fw-bold">Emergency Ambulance Service Australia</h6>
                             <hr
                                 className="mb-4 mt-0 d-inline-block mx-auto"
                                 style={{ width: '60px', backgroundColor: 'rgb(33, 37, 41)', height: '2px' }}
                             />
                             <p>
-                                Here you can use rows and columns to organize your footer
-                                content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit.
+                                A React Service Application Developed By Saalim Shadman to get a glimpse experience of Real World Projects.
                             </p>
                         </div>
 
