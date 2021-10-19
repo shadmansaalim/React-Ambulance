@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 import googleIcon from '../../images/googleIcon.png'
 
 const SignUp = () => {
-    const { user, setUser, setError, createAccountUsingEmail, setUserDetails, handleNameChange, handleSignUpEmailChange, handleSignUpPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp, setIsLoading } = useAuth();
+    const { user, setUser, error, setError, createAccountUsingEmail, setUserDetails, handleNameChange, handleSignUpEmailChange, handleSignUpPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp, setIsLoading } = useAuth();
 
     const history = useHistory();
 
@@ -66,6 +66,7 @@ const SignUp = () => {
             <div className="col-md-8 col-lg-4 mx-auto">
                 <div className="card my-5" style={{ backgroundColor: 'rgb(236, 239, 241)' }}>
                     <article className="card-body mx-auto" style={{ maxWidth: '400px' }}>
+                        <p className="text-danger">{error}</p>
                         <h4 className="card-title mt-3 text-center">Create Account</h4>
                         <p className="text-center">Get Free Emergency Ambulance Service</p>
                         <p>

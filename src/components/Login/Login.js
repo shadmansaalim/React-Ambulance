@@ -4,7 +4,7 @@ import { useHistory, useLocation } from 'react-router-dom';
 import googleIcon from '../../images/googleIcon.png'
 
 const Login = () => {
-    const { setError, handleLoginEmailChange, handleLoginPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp, handleLogin, setIsLoading } = useAuth();
+    const { setError, handleLoginEmailChange, handleLoginPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp, handleLogin, setIsLoading, error } = useAuth();
 
     const history = useHistory();
     const location = useLocation();
@@ -70,6 +70,7 @@ const Login = () => {
             <div className="col-md-8 col-lg-4 mx-auto">
                 <div className="card my-5" style={{ backgroundColor: 'rgb(236, 239, 241)' }}>
                     <article className="card-body mx-auto" style={{ maxWidth: '400px' }}>
+                        <p className="text-danger">{error}</p>
                         <h4 className="card-title mt-3 text-center">Welcome Back</h4>
                         <p className="text-center">Get Free Emergency Ambulance Service</p>
                         <p>

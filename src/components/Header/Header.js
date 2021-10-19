@@ -21,14 +21,12 @@ const Header = () => {
         <Navbar variant="white" className="bg-dark" expand="lg">
             <Container>
                 <Navbar.Brand className="text-white" href="/home">
-                    EASA
-                    {/* <img
-                        src="https://medulance.com/images/logo.png"
-                        width="200"
-                        height="50"
+                    <img
+                        src="https://www.ambulance.vic.gov.au/wp-content/themes/av_themes/dist/img/logo.svg"
+                        width="150"
                         className="d-inline-block align-top"
                         alt="Ambulance Victoria"
-                    /> */}
+                    />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
