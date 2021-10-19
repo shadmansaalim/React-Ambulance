@@ -8,39 +8,6 @@ const Footer = () => {
             className="text-center text-lg-start text-dark"
             style={{ backgroundColor: '#ECEFF1' }}
         >
-
-            <section
-                className="d-flex justify-content-between p-4 text-white"
-                style={{ backgroundColor: '	#42ba96' }}
-            >
-
-                <div className="me-5">
-                    <span>Get connected with us on social networks:</span>
-                </div>
-
-                <div>
-                    <a href="" className="text-white me-4">
-                        <i className="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="" className="text-white me-4">
-                        <i className="fab fa-twitter"></i>
-                    </a>
-                    <a href="" className="text-white me-4">
-                        <i className="fab fa-google"></i>
-                    </a>
-                    <a href="" className="text-white me-4">
-                        <i className="fab fa-instagram"></i>
-                    </a>
-                    <a href="" className="text-white me-4">
-                        <i className="fab fa-linkedin"></i>
-                    </a>
-                    <a href="" className="text-white me-4">
-                        <i className="fab fa-github"></i>
-                    </a>
-                </div>
-
-            </section>
-
             <section className="bg-dark text-white p-5">
                 <div className="container text-center text-md-start ">
                     <div className="row ">
@@ -115,8 +82,8 @@ const Footer = () => {
             </section>
 
             <div
-                className="text-center p-3"
-                style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}
+                className="text-center text-white p-3"
+                style={{ backgroundColor: '#42ba96' }}
             >
                 <small>© 2021 Copyright Application Developed by Saalim Shadman, a Computer Science Student at RMIT, Australia</small>
             </div>
