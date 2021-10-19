@@ -1,39 +1,39 @@
 import React from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
-import { geolocated } from 'react-geolocated';
+import './Contact.css';
 
-const DEFAULT_LONGITUDE = -123;
-const DEFAULT_LATITUDE = 48;
-
-
-class Contact extends React.Component {
-    render() {
-        const longitude = this.props.coords ? this.props.coords.longitude : DEFAULT_LONGITUDE;
-        const latitude = this.props.coords ? this.props.coords.latitude : DEFAULT_LATITUDE;
-        return (
-            <div className="my-5" >
-                <MapContainer center={[longitude, latitude]} zoom={12}>
-                    <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'>
-
-                    </TileLayer>
-                    {
-                        !this.props.coords ?
-                            <div className="loading">Loading</div>
-                            :
-                            <Marker position={[longitude, latitude]}>
-                                <Popup>
-                                    You are here!
-                                </Popup>
-                            </Marker>
-                    }
-                </MapContainer>
+const Contact = () => {
+    return (
+        <div class="container contact-form shadow my-5 col-lg-8 mx-auto">
+            <div class="contact-image">
+                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact" />
             </div>
-        );
-    }
+            <h3 className="mt-5">Drop Us a Message</h3>
+            <form>
+                <div class="row d-flex align-items-center">
+                    <div class="col-md-6">
+                        <div class="form-group mb-2">
+                            <input type="text" name="txtName" class="form-control" placeholder="Your Name *" value="" />
+                        </div>
+                        <div class="form-group mb-2">
+                            <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" value="" />
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mt-3 mt-md-0">
+                            <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style={{ width: '100%', height: '150px' }}></textarea>
+                        </div>
+                    </div>
+                    <div className="mt-4">
+                        <button type="submit" className="btn btn-outline-dark">Submit</button>
+                    </div>
+                </div>
+
+            </form>
+        </div >
+    );
 };
-export default geolocated({
-    positionOptions: {
-        enableHighAccuracy: false
-    },
-    userDecisionTimeout: 10000
-})(Contact);
+
+export default Contact;

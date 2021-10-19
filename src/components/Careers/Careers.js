@@ -26,7 +26,7 @@ const Careers = () => {
                     <h5 className="fw-bold mt-5">EQUAL OPPORTUNITY EMPLOYER</h5>
                     <p className="mt-3 text-muted">Emergency Ambulance Service is committed to the principle of <strong>equal employment opportunity</strong> and it is our policy to ensure equal employment opportunities for all, without regard to race, color, religion, sex, national origin, age, disability, veteran status or any other non job-related characteristic protected by law.</p>
 
-                    <h5 className="fw-bold mt-5">HIRING REQUIREMENTS</h5>
+                    <h5 className="fw-bold mt-5 mb-3">HIRING REQUIREMENTS</h5>
                     <p className="d-flex align-items-start mt-2">
                         <FontAwesomeIcon className="text-success me-2" icon={faCheck} />
                         <small className="text-muted">Receipt of a fully completed, signed  and dated Employment Application</small>
