@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import './Header.css'
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const history = useHistory();
@@ -31,8 +32,10 @@ const Header = () => {
                 <Navbar.Toggle className="bg-light" aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto d-flex align-items-center">
-                        <Nav.Link className="text-white" href="/home">Home</Nav.Link>
+                        <Link className="text-white nav-link " to="/home">Home</Link>
                         <HashLink className="nav-link text-white me-lg-2" to="/#services">Services</HashLink>
+                        <Link className="text-white nav-link  me-lg-2" to="/contact">Contact</Link>
+                        <Link className="text-white nav-link  me-lg-2" to="/careers">Careers</Link>
                         {
                             user ?
                                 user?.photoURL ?

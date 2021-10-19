@@ -16,7 +16,8 @@ import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import PrivateForm from './components/PrivateRoute/PrivateForm';
 import NotFound from './components/NotFound/NotFound';
-
+import Contact from './components/Contact/Contact'
+import Careers from './components/Careers/Careers'
 function App() {
 
   return (
@@ -41,6 +42,12 @@ function App() {
               <PrivateForm exact path="/login">
                 <Login></Login>
               </PrivateForm>
+              <Route exact path="/contact">
+                <Contact></Contact>
+              </Route>
+              <Route exact path="/careers">
+                <Careers></Careers>
+              </Route>
               <Route path="*">
                 <NotFound></NotFound>
               </Route>
