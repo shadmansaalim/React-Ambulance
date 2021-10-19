@@ -21,22 +21,65 @@ const ServiceDetails = () => {
         <div>
             {
                 selectedService && <section className="container my-5">
-                    <h2>Service Details</h2>
-                    <div className="row d-flex mx-auto ">
-                        <div className="col-11 col-lg-6 d-flex flex-column justify-content-center p-lg-5 mx-auto order-2 order-lg-1 mt-3 mt-lg-0" style={{ backgroundColor: '#ECEFF1' }}>
-                            <div>
-                                <h2>{selectedService.name}</h2>
-                                <p>{selectedService.description}</p>
-                                <button className="btn btn-outline-dark rounded-pill">Book Now</button>
-                            </div>
+                    <div className="mb-4 text-center col-lg-8 mx-auto">
+                        <h2>{selectedService.name}</h2>
+                        <p>{selectedService.description}</p>
+                    </div>
+
+                    <div className="d-flex justify-content-around mx-auto align-items-stretch my-5">
+
+                        <div className="card p-4 " style={{ backgroundColor: 'rgb(236, 239, 241)' }}>
+                            <article className="card-body mx-auto d-flex flex-column justify-content-center" style={{ maxWidth: '400px' }}>
+
+                                <p className="text-center">Provide Details and Confirm Booking</p>
+
+                                <form className="mt-4">
+                                    <div className="form-group input-group mb-3">
+
+                                        <span className="input-group-text"> <i className="fa fa-user"></i> </span>
+
+                                        <input name="" className="form-control" placeholder="Patient Name" type="text" required />
+                                    </div>
+                                    <div className="form-group input-group mb-3">
+
+                                        <span className="input-group-text"> <i className="fa fa-envelope"></i> </span>
+
+                                        <input name="" className="form-control" placeholder="Email Address" type="email" required />
+                                    </div>
+                                    <div className="form-group input-group mb-3">
+
+                                        <span className="input-group-text"> <i className="fa fa-home"></i> </span>
+
+                                        <input name="" className="form-control" placeholder="Home Address" type="text" required />
+                                    </div>
+                                    <div className="form-group input-group mb-3">
+
+                                        <span className="input-group-text"> <i className="fa fa-phone"></i> </span>
+
+                                        <input name="" className="form-control" placeholder="Phone Number" type="number" required />
+                                    </div>
+
+
+                                    <div className="form-group my-4 text-center">
+                                        <button type="submit" className="btn btn-success btn-block">Confirm Booking</button>
+                                    </div>
+
+                                </form>
+                            </article>
+
                         </div>
-                        <div className="col-lg-6 mx-auto order-1 order-lg-2">
-                            <img className="img-fluid service-img rounded-3 " src={selectedService.image} alt="" />
+                        <div>
+                            <h4>Why Choose {selectedService.name} ?</h4>
+                            <ul>
+                                {
+                                    (selectedService.advantages).map(advantage => <li>{advantage}</li>)
+                                }
+                            </ul>
                         </div>
                     </div>
-                </section>
+                </section >
             }
-        </div>
+        </div >
     );
 };
 
