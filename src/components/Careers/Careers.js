@@ -96,6 +96,7 @@ const Careers = () => {
                     </p>
                 </div>
 
+                <h2 className="text-start mb-3">Recent Job Openings</h2>
                 <Row xs={1} md={4} className="g-4">
 
                     <Col>
