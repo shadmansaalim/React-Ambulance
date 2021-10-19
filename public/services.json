@@ -39,9 +39,22 @@
         "image": "https://www.stanplus.com/images/als.jpg"
     },
     {
+        "name": "Non-Medical Stretcher Transport",
+        "description": "Non-Medical Stretcher Van Transportation (SV) for patients that do not need any medical interventions, but are a fall risk or incapable of being safely transported while seated",
+        "id": 4,
+        "advantages": [
+            "Immobilization sets",
+            "Monitoring and diagnostic",
+            "Oxygen supply & Basic Respiratory Support",
+            "Consumables & Disposables",
+            "Safety Tools"
+        ],
+        "image": "https://ambulanceusa.com/wp-content/uploads/2021/04/Non-Medical-Stretcher-Transport-home.jpg"
+    },
+    {
         "name": "Medical Utility Vehicle",
         "description": "The Medical Utility Vehicle is a state-of-the-art small or large van that is designed to facilitate the movement & transfer of patients.",
-        "id": 4,
+        "id": 5,
         "advantages": [
             "Wheelchair Access",
             "Helpers for Mobility",
@@ -53,7 +66,7 @@
     {
         "name": "Air Ambulance",
         "description": "Air ambulances help in transfer of patient across long distances in both emergency and non-emergency situations. We also provide Air Cargos which help in transfer of dead bodies across long distances.",
-        "id": 5,
+        "id": 6,
         "advantages": [
             "Assisted by Doctor & Paramedic",
             "Access to more Airports",
