@@ -18,7 +18,7 @@ const Header = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     return (
-        <Navbar variant="white" className="bg-dark" expand="lg">
+        <Navbar className="bg-dark" expand="lg">
             <Container>
                 <Navbar.Brand className="text-white" href="/home">
                     <img
@@ -28,7 +28,7 @@ const Header = () => {
                         alt="Ambulance Victoria"
                     />
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                <Navbar.Toggle className="bg-light" aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto d-flex align-items-center">
                         <Nav.Link className="text-white" href="/home">Home</Nav.Link>
