@@ -15,6 +15,7 @@ import PrivateServices from './components/PrivateRoute/PrivateServices';
 import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 import PrivateForm from './components/PrivateRoute/PrivateForm';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
 
@@ -40,6 +41,9 @@ function App() {
               <PrivateForm exact path="/login">
                 <Login></Login>
               </PrivateForm>
+              <Route path="*">
+                <NotFound></NotFound>
+              </Route>
             </Switch>
             <Footer></Footer>
           </ScrollToTop>
