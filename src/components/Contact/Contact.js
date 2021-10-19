@@ -4,8 +4,8 @@ import './Contact.css';
 const Contact = () => {
     return (
         <div className="container my-5">
-            <h3>Contact Us</h3>
-            <p className="text-muted mt-5">As your ambulance service, we welcome your thoughts, comments and feedback.</p>
+            <h3 className="text-center">Contact Us</h3>
+            <p className="text-muted mt-5 text-center">As your ambulance service, we welcome your thoughts, comments and feedback.</p>
             <div className="mt-4 d-flex align-items-center justify-content-center">
                 <p className="text-muted me-3 mb-0">If you require an emergency ambulance</p>
                 <button className="btn btn-outline-dark">Call Triple Zero (000)</button>
