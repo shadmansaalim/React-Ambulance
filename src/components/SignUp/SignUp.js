@@ -98,7 +98,7 @@ const SignUp = () => {
                                 <input onBlur={handleSignUpPasswordChange} className="form-control" placeholder="Create password" type="password" required />
                             </div>
 
-                            <div className="form-group my-4">
+                            <div className="form-group my-4 text-center">
                                 <button type="submit" className="btn btn-dark btn-block"> Create Account  </button>
                             </div>
                             <p className="text-center">Have an account? <a href="/login">Log In</a> </p>
