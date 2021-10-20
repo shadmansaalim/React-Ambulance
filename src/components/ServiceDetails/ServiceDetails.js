@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import useServices from '../../hooks/useServices';
+import swal from 'sweetalert';
 
 const ServiceDetails = () => {
     const { serviceId } = useParams();
@@ -11,12 +12,44 @@ const ServiceDetails = () => {
     const [services, setServices] = useServices();
     const [selectedService, setSelectedService] = useState(null);
 
+    const [bookingName, setBookingName] = useState('');
+    const [bookingEmail, setBookingEmail] = useState('');
+    const [bookingAddress, setBookingAddress] = useState('');
+    const [bookingPhone, setBookingPhone] = useState('');
+
     useEffect(() => {
         setSelectedService(services.find(service => parseInt(service.id) === parseInt(serviceId)))
     }, [services, serviceId]);
 
-    console.log(selectedService);
+    const confirmBooking = (e) => {
+        e.preventDefault();
+        swal({
+            title: "We are coming soon!",
+            text: `${selectedService.name} Booked For Patient ${bookingName}`,
+            icon: "success",
+            buttons: true,
+            successMode: true,
+            buttons: ['Cancel', 'Track Ambulance']
+        })
+            .then((willTrack) => {
+                if (willTrack) {
+                    history.push('/contact')
+                }
+            });
+    }
 
+    const handleBookingName = e => {
+        setBookingName(e.target.value);
+    }
+    const handleBookingEmail = e => {
+        setBookingEmail(e.target.value);
+    }
+    const handleBookingAddress = e => {
+        setBookingAddress(e.target.value);
+    }
+    const handleBookingPhone = e => {
+        setBookingPhone(e.target.value);
+    }
 
     return (
         <div>
@@ -33,29 +66,29 @@ const ServiceDetails = () => {
 
                             <p className="text-center mt-3">Provide Details and Confirm Booking</p>
 
-                            <form className="mt-3 col-lg-10 mx-auto">
+                            <form onSubmit={confirmBooking} className="mt-3 col-lg-10 mx-auto">
                                 <div className="form-group input-group mb-3 ">
                                     <span className="input-group-text"> <i className="fa fa-user"></i> </span>
 
-                                    <input name="" className="form-control" placeholder="Patient Name" type="text" required />
+                                    <input onBlur={handleBookingName} name="" className="form-control" placeholder="Patient Name" type="text" required />
                                 </div>
                                 <div className="form-group input-group mb-3">
 
                                     <span className="input-group-text"> <i className="fa fa-envelope"></i> </span>
 
-                                    <input name="" className="form-control" placeholder="Email Address" type="email" required />
+                                    <input onBlur={handleBookingEmail} name="" className="form-control" placeholder="Email Address" type="email" required />
                                 </div>
                                 <div className="form-group input-group mb-3">
 
                                     <span className="input-group-text"> <i className="fa fa-home"></i> </span>
 
-                                    <input name="" className="form-control" placeholder="Home Address" type="text" required />
+                                    <input onBlur={handleBookingAddress} name="" className="form-control" placeholder="Home Address" type="text" required />
                                 </div>
                                 <div className="form-group input-group mb-3">
 
                                     <span className="input-group-text"> <i className="fa fa-phone"></i> </span>
 
-                                    <input name="" className="form-control" placeholder="Phone Number" type="number" required />
+                                    <input onBlur={handleBookingPhone} name="" className="form-control" placeholder="Phone Number" type="number" required />
                                 </div>
 
                                 <div className="form-group input-group">
