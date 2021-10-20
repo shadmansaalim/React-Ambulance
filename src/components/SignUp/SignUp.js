@@ -22,7 +22,11 @@ const SignUp = () => {
                 history.push('/home')
             })
             .catch((error) => {
-                setError(error.message)
+                console.log(error.message)
+                if (error.message == 'Firebase: Error (auth/email-already-in-use).') {
+                    setError('An account already exists with this email')
+                }
+
             });
     }
 
@@ -36,10 +40,12 @@ const SignUp = () => {
                 history.push('/home')
             })
             .catch(error => {
-                setError(error.message)
+                console.log(error.message)
+                if (error.message == 'Firebase: Error (auth/account-exists-with-different-credential).') {
+                    setError('You already have an account with same credentials. Please try logging with that')
+                }
             })
             .finally(() => {
-                setError('')
                 setIsLoading(false);
             });
     }
@@ -52,10 +58,13 @@ const SignUp = () => {
                 history.push('/home')
             })
             .catch(error => {
-                setError(error.message)
+                console.log(error.message)
+                if (error.message == 'Firebase: Error (auth/account-exists-with-different-credential).') {
+                    setError('You already have an account with same credentials. Please try logging with that')
+                }
             })
             .finally(() => {
-                setError('')
+
                 setIsLoading(false);
             });
     }
@@ -68,10 +77,12 @@ const SignUp = () => {
                 history.push('/home')
             })
             .catch(error => {
-                setError(error.message)
+                if (error.message == 'Firebase: Error (auth/account-exists-with-different-credential).') {
+                    setError('You already have an account with same credentials. Please try logging with that')
+                }
             })
             .finally(() => {
-                setError('')
+                console.log(error.message)
                 setIsLoading(false);
             });
     }
@@ -81,7 +92,7 @@ const SignUp = () => {
             <div className="col-md-8 col-lg-4 mx-auto">
                 <div className="card my-5" style={{ backgroundColor: 'rgb(236, 239, 241)' }}>
                     <article className="card-body mx-auto" style={{ maxWidth: '400px' }}>
-                        <p className="text-danger">{error}</p>
+                        <p className="text-danger text-center">{error}</p>
                         <h4 className="card-title mt-3 text-center">Create Account</h4>
                         <p className="text-center">Get Free Emergency Ambulance Service</p>
                         <p>

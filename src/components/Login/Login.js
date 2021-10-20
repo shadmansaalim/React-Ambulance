@@ -23,10 +23,11 @@ const Login = () => {
                 history.push(redirectURL)
             })
             .catch(error => {
-                setError(error.message)
+                if (error.message == 'Firebase: Error (auth/account-exists-with-different-credential).') {
+                    setError('You already have an account with same credentials. Please try logging with that')
+                }
             })
             .finally(() => {
-                setError('')
                 setIsLoading(false);
             });
     }
@@ -39,10 +40,13 @@ const Login = () => {
                 history.push(redirectURL)
             })
             .catch(error => {
-                setError(error.message)
+                console.log(error.message)
+                if (error.message == 'Firebase: Error (auth/account-exists-with-different-credential).') {
+                    setError('You already have an account with same credentials. Please try logging with that')
+                }
+
             })
             .finally(() => {
-                setError('')
                 setIsLoading(false);
             });
     }
@@ -55,10 +59,11 @@ const Login = () => {
                 history.push(redirectURL)
             })
             .catch(error => {
-                setError(error.message)
+                if (error.message == 'Firebase: Error (auth/account-exists-with-different-credential).') {
+                    setError('You already have an account with same credentials. Please try logging with that')
+                }
             })
             .finally(() => {
-                setError('')
                 setIsLoading(false);
             });
     }
@@ -72,7 +77,15 @@ const Login = () => {
                 history.push(redirectURL);
             })
             .catch(error => {
-                setError(error.message);
+                console.log(error.message)
+                if (error.message == 'Firebase: Error (auth/wrong-password).') {
+                    setError('Invalid Password! Please Try Again')
+                }
+                else if (error.message == 'Firebase: Error (auth/user-not-found).') {
+                    setError('User Not Found! Please create an account')
+                }
+
+
             })
 
     }
@@ -86,7 +99,7 @@ const Login = () => {
             <div className="col-md-8 col-lg-4 mx-auto">
                 <div className="card my-5" style={{ backgroundColor: 'rgb(236, 239, 241)' }}>
                     <article className="card-body mx-auto" style={{ maxWidth: '400px' }}>
-                        <p className="text-danger">{error}</p>
+                        <p className="text-danger text-center">{error}</p>
                         <h4 className="card-title mt-3 text-center">Welcome Back</h4>
                         <p className="text-center">Get Free Emergency Ambulance Service</p>
                         <p>
