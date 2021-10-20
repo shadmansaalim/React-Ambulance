@@ -27,7 +27,7 @@ const Records = () => {
                     <div className="bg-dark text-white p-5 rounded-3">
                         <h1 style={{ color: '	#42ba96' }}>
                             <FontAwesomeIcon className="me-2" icon={faHandshake} />
-                            <CountUp redraw={true} end={43} duration={3} >
+                            <CountUp redraw={true} end={43} duration={2} >
                                 {({ countUpRef, start }) => (
                                     <VisibilitySensor onChange={start} delayedCall>
                                         <span ref={countUpRef} />
