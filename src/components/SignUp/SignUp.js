@@ -1,5 +1,4 @@
 import React from 'react';
-import imgSignUp from '../../images/signup.svg'
 import './SignUp.css'
 import useAuth from '../../hooks/useAuth'
 import { useHistory } from 'react-router-dom';

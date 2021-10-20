@@ -1,5 +1,4 @@
 import React from 'react';
-import { Col, Card } from 'react-bootstrap';
 import { useHistory } from 'react-router-dom';
 import './Service.css'
 

@@ -1,7 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
-import { useState } from 'react';
-import { Row } from 'react-bootstrap';
 import useServices from '../../hooks/useServices';
 import Service from '../Service/Service';
 
