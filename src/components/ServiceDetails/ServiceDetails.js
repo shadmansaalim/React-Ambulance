@@ -1,18 +1,19 @@
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useHistory, useParams } from 'react-router-dom';
 import useServices from '../../hooks/useServices';
 
 const ServiceDetails = () => {
     const { serviceId } = useParams();
+    const history = useHistory();
 
     const [services, setServices] = useServices();
     const [selectedService, setSelectedService] = useState(null);
 
     useEffect(() => {
         setSelectedService(services.find(service => parseInt(service.id) === parseInt(serviceId)))
-    }, [services]);
+    }, [services, serviceId]);
 
     console.log(selectedService);
 
@@ -56,6 +57,26 @@ const ServiceDetails = () => {
 
                                     <input name="" className="form-control" placeholder="Phone Number" type="number" required />
                                 </div>
+
+                                <div className="form-group input-group">
+                                    <span className="input-group-text">Type</span>
+                                    <select class="form-select" aria-label="Default select example" onChange={(e) => {
+                                        console.log(`/service/${e.target.value}`)
+                                        history.push(`/service/${e.target.value}`)
+
+                                    }}>
+
+
+                                        {
+                                            services.map(service => parseInt(service.id) === parseInt(serviceId) ?
+                                                <option selected value={service.id}>{service.name}</option>
+                                                :
+                                                <option value={service.id}>{service.name}</option>)
+                                        }
+
+                                    </select>
+                                </div>
+
 
 
                                 <div className="form-group my-4 text-center">
