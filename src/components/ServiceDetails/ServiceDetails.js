@@ -33,11 +33,9 @@ const ServiceDetails = () => {
         })
             .then((willTrack) => {
                 if (willTrack) {
-                    history.push('/contact')
+                    // history.push('/')
                 }
-                else {
-                    setBookingName('')
-                }
+
             });
         e.target.reset();
     }
