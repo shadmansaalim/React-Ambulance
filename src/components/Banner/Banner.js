@@ -4,6 +4,7 @@ import { Carousel } from 'react-bootstrap';
 import bgVideo from '../../video/videoplayback.mp4'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { HashLink } from 'react-router-hash-link';
 const Banner = () => {
     return (
         <div className="position-relative">
@@ -12,7 +13,9 @@ const Banner = () => {
                     <source src={bgVideo} type="video/mp4"></source>
                 </video>
             </div>
-            <button className="btn btn-outline-light btn-lg book-btn">Book Ambulance <FontAwesomeIcon icon={faArrowRight} /></button>
+            <HashLink to="#services">
+                <button className="btn btn-outline-light btn-lg book-btn">Book Ambulance <FontAwesomeIcon icon={faArrowRight} /></button>
+            </HashLink>
         </div >
 
 

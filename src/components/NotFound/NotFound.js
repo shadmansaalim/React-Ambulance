@@ -9,7 +9,7 @@ const NotFound = () => {
     const history = useHistory();
     return (
         <Container style={{ marginTop: 120, marginBottom: 120 }}>
-            <div>
+            <div className="text-center">
                 {/* Not Found SVG Image for Good UI/UX */}
                 <div className="col-6 mx-auto">
                     <img className="img-fluid" src={img} alt="" />
