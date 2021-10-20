@@ -12,6 +12,8 @@ const SignUp = () => {
 
     const history = useHistory();
 
+
+
     const handleEmailSignUp = e => {
         e.preventDefault();
         createAccountUsingEmail()

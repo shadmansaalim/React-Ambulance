@@ -12,7 +12,7 @@ import { Link } from 'react-router-dom';
 const Header = () => {
     const history = useHistory();
 
-    const { user, logOutUser } = useAuth();
+    const { user, logOutUser, setError } = useAuth();
 
     const [show, setShow] = useState(false);
 
@@ -47,8 +47,14 @@ const Header = () => {
 
                                 :
                                 <div className="d-flex flex-column flex-lg-row mt-2 mt-lg-0">
-                                    <Button className="me-lg-2" onClick={() => history.push('/login')} variant="outline-light">Login <FontAwesomeIcon icon={faSignInAlt} /></Button>
-                                    <Button className="mt-1 mt-lg-0" onClick={() => history.push('/sign-up')} variant="light">Sign Up <FontAwesomeIcon icon={faUserPlus} /></Button>
+                                    <Button className="me-lg-2" onClick={() => {
+                                        setError('');
+                                        history.push('/login');
+                                    }} variant="outline-light">Login <FontAwesomeIcon icon={faSignInAlt} /></Button>
+                                    <Button className="mt-1 mt-lg-0" onClick={() => {
+                                        setError('');
+                                        history.push('/sign-up');
+                                    }} variant="light">Sign Up <FontAwesomeIcon icon={faUserPlus} /></Button>
                                 </div>
                         }
 
