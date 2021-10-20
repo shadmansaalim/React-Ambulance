@@ -1,6 +1,5 @@
 import React from 'react';
 import './Banner.css'
-import { Carousel } from 'react-bootstrap';
 import bgVideo from '../../video/videoplayback.mp4'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';

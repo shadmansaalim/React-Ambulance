@@ -4,9 +4,11 @@ import './SignUp.css'
 import useAuth from '../../hooks/useAuth'
 import { useHistory } from 'react-router-dom';
 import googleIcon from '../../images/googleIcon.png'
+import swal from 'sweetalert';
+
 
 const SignUp = () => {
-    const { user, setUser, error, setError, createAccountUsingEmail, setUserDetails, handleNameChange, handleSignUpEmailChange, handleSignUpPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp, setIsLoading } = useAuth();
+    const { user, name, setUser, error, setError, createAccountUsingEmail, setUserDetails, handleNameChange, handleSignUpEmailChange, handleSignUpPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp, setIsLoading } = useAuth();
 
     const history = useHistory();
 
@@ -16,6 +18,7 @@ const SignUp = () => {
             .then((result) => {
                 setUser(result.user)
                 setUserDetails();
+                swal("Account Created Successfully!", `Thank You ${name} for being with us.`, "success");
                 history.push('/home')
             })
             .catch((error) => {
@@ -29,36 +32,48 @@ const SignUp = () => {
         handleGoogleSignUp()
             .then(result => {
                 console.log(result.user)
+                swal("Account Created Successfully!", `Thank You ${result.user.displayName} for being with us.`, "success");
                 history.push('/home')
             })
             .catch(error => {
                 setError(error.message)
             })
-            .finally(() => setIsLoading(false));
+            .finally(() => {
+                setError('')
+                setIsLoading(false);
+            });
     }
     const signUpUsingFacebook = () => {
         setIsLoading(true);
         handleFacebookSignUp()
             .then(result => {
                 console.log(result.user)
+                swal("Account Created Successfully!", `Thank You ${result.user.displayName} for being with us.`, "success");
                 history.push('/home')
             })
             .catch(error => {
                 setError(error.message)
             })
-            .finally(() => setIsLoading(false));
+            .finally(() => {
+                setError('')
+                setIsLoading(false);
+            });
     }
     const signUpUsingTwitter = () => {
         setIsLoading(true);
         handleTwitterSignUp()
             .then(result => {
                 console.log(result.user)
+                swal("Account Created Successfully!", `Thank You ${result.user.displayName} for being with us.`, "success");
                 history.push('/home')
             })
             .catch(error => {
                 setError(error.message)
             })
-            .finally(() => setIsLoading(false));
+            .finally(() => {
+                setError('')
+                setIsLoading(false);
+            });
     }
 
     return (
@@ -71,9 +86,8 @@ const SignUp = () => {
                         <p className="text-center">Get Free Emergency Ambulance Service</p>
                         <p>
                             <button onClick={signUpUsingGoogle} class="btn btn-light w-100 btn-block  btn-outline" ><img width="16px" className="img-fluid mb-1 me-2" src={googleIcon} alt="Google" />Continue With Google</button>
-                            {/* <button onClick={signUpUsingGoogle} className="btn btn-block btn-light  w-100"> <i className="fab fa-google"></i>   Continue With Google</button> */}
-                            <button onClick={signUpUsingFacebook} className="mt-2 btn btn-block btn-twitter w-100 text-white"> <i className="fab fa-twitter"></i>   Continue With Twitter</button>
-                            <button onClick={signUpUsingTwitter} className="btn btn-block btn-facebook w-100 mt-2 text-white"> <i className="fab fa-facebook-f"></i>   Continue With Facebook</button>
+                            <button onClick={signUpUsingTwitter} className="mt-2 btn btn-block btn-twitter w-100 text-white"> <i className="fab fa-twitter"></i>   Continue With Twitter</button>
+                            <button onClick={signUpUsingFacebook} className="btn btn-block btn-facebook w-100 mt-2 text-white"> <i className="fab fa-facebook-f"></i>   Continue With Facebook</button>
                         </p>
                         <p className="divider-text">
                             <span className="bg-light rounded-circle p-2">OR</span>

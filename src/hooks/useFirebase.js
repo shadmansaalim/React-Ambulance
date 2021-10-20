@@ -100,6 +100,7 @@ const useFirebase = () => {
 
     return {
         user,
+        name,
         setUser,
         error,
         setError,

@@ -2,6 +2,8 @@ import React from 'react';
 import useAuth from '../../hooks/useAuth'
 import { useHistory, useLocation } from 'react-router-dom';
 import googleIcon from '../../images/googleIcon.png'
+import swal from 'sweetalert';
+
 
 const Login = () => {
     const { setError, handleLoginEmailChange, handleLoginPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp, handleLogin, setIsLoading, error } = useAuth();
@@ -15,37 +17,50 @@ const Login = () => {
         setIsLoading(true);
         handleGoogleSignUp()
             .then(result => {
+
                 console.log(result.user)
+                swal(`Welcome Back ${result.user.displayName.substr(0, result.user.displayName.indexOf(' '))}`, "Enjoy Our Ambulance Services.", "success");
                 history.push(redirectURL)
             })
             .catch(error => {
                 setError(error.message)
             })
-            .finally(() => setIsLoading(false));
+            .finally(() => {
+                setError('')
+                setIsLoading(false);
+            });
     }
     const signUpUsingFacebook = () => {
         setIsLoading(true);
         handleFacebookSignUp()
             .then(result => {
                 console.log(result.user)
+                swal(`Welcome Back ${result.user.displayName.substr(0, result.user.displayName.indexOf(' '))}`, "Enjoy Our Ambulance Services.", "success");
                 history.push(redirectURL)
             })
             .catch(error => {
                 setError(error.message)
             })
-            .finally(() => setIsLoading(false));
+            .finally(() => {
+                setError('')
+                setIsLoading(false);
+            });
     }
     const signUpUsingTwitter = () => {
         setIsLoading(true);
         handleTwitterSignUp()
             .then(result => {
                 console.log(result.user)
+                swal(`Welcome Back ${result.user.displayName.substr(0, result.user.displayName.indexOf(' '))}`, "Enjoy Our Ambulance Services.", "success");
                 history.push(redirectURL)
             })
             .catch(error => {
                 setError(error.message)
             })
-            .finally(() => setIsLoading(false));
+            .finally(() => {
+                setError('')
+                setIsLoading(false);
+            });
     }
 
 
@@ -53,6 +68,7 @@ const Login = () => {
         e.preventDefault();
         handleLogin()
             .then(result => {
+                swal(`Welcome Back ${result.user.displayName.substr(0, result.user.displayName.indexOf(' '))}`, "Enjoy Our Ambulance Services.", "success");
                 history.push(redirectURL);
             })
             .catch(error => {
@@ -93,7 +109,7 @@ const Login = () => {
 
                                 <span className="input-group-text"> <i className="fa fa-lock"></i> </span>
 
-                                <input onBlur={handleLoginPasswordChange} className="form-control" placeholder="Create password" type="password" required />
+                                <input onBlur={handleLoginPasswordChange} className="form-control" placeholder="Password" type="password" required />
                             </div>
 
                             <div className="form-group my-4 text-center">
