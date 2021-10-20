@@ -11,3 +11,7 @@ html,body{
 body{
     font-family: 'Epilogue', sans-serif !important;
 }
+
+.swal-modal .swal-text {
+  text-align: center;
+}

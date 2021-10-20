@@ -17,9 +17,9 @@ const Contact = () => {
         <div className="container my-5">
             <h3 className="text-center">Contact Us</h3>
             <p className="text-muted mt-5 text-center">As your ambulance service, we welcome your thoughts, comments and feedback.</p>
-            <div className="mt-4 d-flex align-items-center justify-content-center">
+            <div className="mt-4 d-flex flex-column flex-lg-row align-items-center justify-content-center">
                 <p className="text-muted me-3 mb-0">If you require an emergency ambulance</p>
-                <button className="btn btn-outline-dark">Call Triple Zero (000)</button>
+                <button className="btn btn-outline-dark mt-2 mt-lg-0">Call Triple Zero (000)</button>
             </div>
             <section className="container row mx-auto d-flex align-items-start" style={{ marginTop: '100px' }}>
                 <div className="col-lg-5 mx-auto text-start">
@@ -35,7 +35,8 @@ const Contact = () => {
                 </div>
                 <div className="col-lg-5 mx-auto">
                     <div className="card" style={{ backgroundColor: 'rgb(236, 239, 241)' }}>
-                        <article className="card-body mx-auto" style={{ maxWidth: '400px' }}>
+
+                        <div className="card-body">
                             <h4 className="card-title mt-3 text-center">Feedback Form</h4>
                             <p className="text-center">We are delighted to serve the Victorians and we respect every feedbacks.</p>
                             <form onSubmit={feedbackSubmission}>
@@ -58,7 +59,8 @@ const Contact = () => {
                                     <button type="submit" className="btn btn-block text-white" style={{ backgroundColor: '#42ba96' }}>Submit</button>
                                 </div>
                             </form>
-                        </article>
+
+                        </div>
                     </div>
                 </div>
             </section>
