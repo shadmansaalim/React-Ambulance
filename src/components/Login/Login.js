@@ -3,7 +3,7 @@ import useAuth from '../../hooks/useAuth'
 import { useHistory, useLocation } from 'react-router-dom';
 import googleIcon from '../../images/googleIcon.png'
 import swal from 'sweetalert';
-
+import bg from '../../images/bg.jpeg'
 
 const Login = () => {
     const { setError, handleLoginEmailChange, handleLoginPasswordChange, handleGoogleSignUp, handleFacebookSignUp, handleTwitterSignUp, handleLogin, setIsLoading, error } = useAuth();
@@ -93,7 +93,7 @@ const Login = () => {
     }
 
     return (
-        <section className="vh-100 row mx-auto d-flex align-items-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1600959907703-125ba1374a12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)' }}>
+        <section className="vh-100 row mx-auto d-flex align-items-center" style={{ backgroundImage: `url(${bg})` }}>
 
             <div className="col-lg-6">
 

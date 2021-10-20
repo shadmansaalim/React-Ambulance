@@ -4,6 +4,7 @@ import useAuth from '../../hooks/useAuth'
 import { useHistory } from 'react-router-dom';
 import googleIcon from '../../images/googleIcon.png'
 import swal from 'sweetalert';
+import bg from '../../images/bg.jpeg'
 
 
 const SignUp = () => {
@@ -89,7 +90,7 @@ const SignUp = () => {
     }
 
     return (
-        <section className="vh-100 row mx-auto d-flex align-items-center" style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1600959907703-125ba1374a12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80)' }}>
+        <section className="vh-100 row mx-auto d-flex align-items-center" style={{ backgroundImage: `url(${bg})` }}>
             <div className="col-md-8 col-lg-4 mx-auto">
                 <div className="card my-5" style={{ backgroundColor: 'rgb(236, 239, 241)' }}>
                     <article className="card-body mx-auto" style={{ maxWidth: '400px' }}>
