@@ -18,6 +18,7 @@ import PrivateForm from './components/PrivateRoute/PrivateForm';
 import NotFound from './components/NotFound/NotFound';
 import Contact from './components/Contact/Contact'
 import Careers from './components/Careers/Careers'
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 function App() {
 
   return (
@@ -54,6 +55,10 @@ function App() {
             </Switch>
             <Footer></Footer>
           </ScrollToTop>
+          <MessengerCustomerChat
+            pageId="102363555577746"
+            appId="1548059912198894"
+          />
         </Router>
       </AuthProvider>
     </div>
