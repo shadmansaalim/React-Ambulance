@@ -3,6 +3,7 @@ import './Careers.css'
 import { Row, Col, Card, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons';
+import { HashLink } from 'react-router-hash-link';
 const Careers = () => {
     return (
         <section>
@@ -10,7 +11,9 @@ const Careers = () => {
                 <div className="container">
                     <h1>Careers</h1>
                     <p>Ambulance is a unique working environment, where the actions of each employee contribute to the ultimate aim of caring for our patients. While the lifesaving work of our paramedics is the cornerstone of Ambulance Victoria, what goes on behind the scenes is just as important to helping us help the community. With more than 4000 employees, there are a variety of jobs out on the road and in our support functions including finance, people services, IT, payroll, operational projects and many others. A career at Ambulance Victoria is so much more than just a job, it is a real way to make a difference.</p>
-                    <button className="btn btn-outline-dark btn-lg">Apply Now <FontAwesomeIcon icon={faAngleDoubleRight} /></button>
+                    <HashLink to="#jobs">
+                        <button className="btn btn-outline-dark btn-lg">Apply Now <FontAwesomeIcon icon={faAngleDoubleRight} /></button>
+                    </HashLink>
                 </div>
             </div>
 
@@ -97,7 +100,7 @@ const Careers = () => {
                 </div>
 
                 <h2 className="text-start mb-3">Recent Job Openings</h2>
-                <Row xs={1} md={4} className="g-4">
+                <Row id="jobs" xs={1} md={4} className="g-4">
 
                     <Col>
                         <Card className="h-100">
