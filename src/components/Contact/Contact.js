@@ -1,7 +1,18 @@
 import React from 'react';
 import './Contact.css';
+import swal from 'sweetalert';
+import { useState } from 'react';
 
 const Contact = () => {
+    const [feedbackName, setFeedbackName] = useState('');
+    const handleUserFeedbackName = (e) => {
+        setFeedbackName(e.target.value);
+    }
+    const feedbackSubmission = (e) => {
+        e.preventDefault();
+        swal("Feedback Sent!", `Thank you ${feedbackName.substr(0, feedbackName.indexOf(' '))} for your response.`, "success");
+        e.target.reset();
+    }
     return (
         <div className="container my-5">
             <h3 className="text-center">Contact Us</h3>
@@ -27,11 +38,11 @@ const Contact = () => {
                         <article className="card-body mx-auto" style={{ maxWidth: '400px' }}>
                             <h4 className="card-title mt-3 text-center">Feedback Form</h4>
                             <p className="text-center">We are delighted to serve the Victorians and we respect every feedbacks.</p>
-                            <form>
+                            <form onSubmit={feedbackSubmission}>
                                 <div className="form-group input-group mb-3">
                                     <span className="input-group-text"> <i className="fa fa-user"></i> </span>
 
-                                    <input name="" className="form-control" placeholder="Full name" type="text" required />
+                                    <input onBlur={handleUserFeedbackName} name="" className="form-control" placeholder="Full name" type="text" required />
                                 </div>
                                 <div className="form-group input-group mb-3">
 
