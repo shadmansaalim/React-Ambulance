@@ -6,7 +6,10 @@ import { Spinner } from 'react-bootstrap';
 const PrivateServices = ({ children, ...rest }) => {
     const { user, isLoading } = useAuth();
     if (isLoading) {
-        return <Spinner animation="border" variant="danger" />
+        return (<div className="vh-100 d-flex flex-column align-items-center mx-auto justify-content-center">
+            <h3>Loading...</h3>
+            <Spinner animation="grow" />
+        </div>);
     }
     return (
         <Route
